@@ -1,0 +1,1501 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Asap', sans-serif;
+    font-style: italic;
+}
+
+:root {
+    --beneficiate-green: #4fa804;
+    --dark-blue: #2D4356;
+    --light-gray: #f5f5f5;
+    --orange: #FF9800;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Barra superior */
+.top-bar {
+    background-color: #212121;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+}
+
+.social-icons a {
+    color: white;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.whatsapp-link {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.whatsapp-link i {
+    color: #25D366;
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.contact-button {
+    background-color: #4fa804;
+    color: #212121;
+    padding: 6px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Barra de navegación */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    color: #4fa804;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    margin-left: 30px;
+}
+
+.menu a {
+    color: var(--beneficiate-green);
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+}
+/*hero*/
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        min-height: 260px;
+    }
+    .hero-img {
+        max-height: 260px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 180px;
+    }
+    .hero-img {
+        max-height: 180px;
+    }
+}
+
+/* Estilos comunes para títulos de sección */
+.section-title {
+    color: #2D4356;
+    font-size: 42px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+.title-highlight {
+    color: #A4D070;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #4fa804;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: hsl(0, 0%, 100%);
+    color: white;
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+}
+
+.cta-button:hover {
+    background-color: #ff831d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 152, 0, 0.4);
+}
+
+/* Nuestros Planes */
+.planes-section {
+    padding: 40px 20px;
+    background-color: white;
+    text-align: center;
+}
+.plan-tab-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Hace que las imágenes inactivas sean blancas */
+    transition: filter 0.2s ease;
+}
+
+.plan-tab.active .plan-tab-icon img {
+    filter: none; /* Icono normal cuando está activo */
+}
+.plan-tab em {
+    color: #fff; /* Texto blanco cuando está inactivo */
+    transition: color 0.2s;
+}
+
+.plan-tab.active em {
+    color: var(--dark-blue); /* Color original cuando está activo (ajusta según tu diseño) */
+}
+.planes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.planes-title {
+    color: #2D4356;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.planes-title-highlight {
+    color: var(--beneficiate-green);
+}
+
+.planes-tabs {
+    display: flex;
+    justify-content: flex-start; /* Alineado a la izquierda */
+    margin-bottom: 0; /* Eliminado el margen inferior */
+    border-radius: 5px 5px 0 0; /* Solo redondeo superior */
+    overflow: visible; /* Cambiado para permitir que tabs sean más pequeños */
+    max-width: 900px; /* Mismo ancho que plan-details */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.plan-tab {
+    padding: 15px 30px;
+    background-color: #e5e5e5;
+    cursor: pointer;
+    flex: 0 0 auto; /* No expandir, tamaño automático */
+    font-weight: bold;
+    color: #2D4356;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre icono y texto */
+    border-radius: 10px 10px 0 0; /* Redondeo superior en cada tab */
+    margin-right: 0px; /* Pequeño espacio entre tabs */
+}
+
+.plan-tab.active {
+    background-color: #e5e5e5;
+    color: #2D4356;
+}
+
+.plan-tab:hover:not(.active) {
+    background-color: white;
+}
+
+.plan-tab-icon {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.plan-tab-icon i {
+    font-size: 20px;
+}
+
+.plan-details {
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.plan-info {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    gap: 20px;
+}
+
+.plan-check-icon svg rect {
+    fill: var(--beneficiate-green); 
+}
+.plan-check-icon {
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.plan-text {
+    flex: 1;
+}
+
+.plan-text h3 {
+    color: #2D4356;
+    font-size: 26px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Banner WhatsApp */
+/* Banner WhatsApp - Rediseñado */
+.whatsapp-banner {
+    background-color: transparent;
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.whatsapp-banner-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(90deg, #54c501 0%, #1ca900 100%);
+    background: url('images/banner-background.png') no-repeat center center;
+    background-size: cover;
+    border-radius: 20px;
+    padding: 0px 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+/* Contenedor de texto e imagen */
+.whatsapp-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex: 1;
+}
+
+.whatsapp-banner-image {
+    flex: 1 1 0;
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -150px;
+}
+
+.whatsapp-banner-image img {
+    width: 100%;
+    height: auto;
+    max-height: 160px;
+    object-fit: contain;
+    display: block;
+}
+
+.whatsapp-banner-text {
+    flex: 1;
+}
+
+.whatsapp-banner-text h3 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.whatsapp-banner-text .highlight {
+    background-color: #FFD54F;
+    color: #2D4356;
+    padding: 4px 12px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.whatsapp-banner-text p {
+    color: white;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Botón WhatsApp separado */
+.whatsapp-banner-button {
+    background-color: #25D366;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 150px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.whatsapp-banner-button i {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.whatsapp-banner-button .phone-number {
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.whatsapp-banner-button:hover {
+    background-color: #128C7E;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* Emojis decorativos */
+.whatsapp-banner-text .emoji {
+    font-size: 24px;
+    margin-left: 8px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .whatsapp-banner-container {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+    
+    .whatsapp-banner-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .whatsapp-banner-text h3 {
+        font-size: 24px;
+    }
+    
+    .whatsapp-banner-button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .whatsapp-banner-image {
+        flex: 0 0 150px;
+        margin-left: auto;
+    }
+    
+    .whatsapp-banner-text h3 {
+        font-size: 20px;
+    }
+    
+    .whatsapp-banner-text p {
+        font-size: 16px;
+    }
+}
+/* Sección Ventajas */
+.ventajas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
+  justify-items: center;
+  align-items: start;
+}
+
+.ventaja-item {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(0,200,255,0.08);
+  padding: 32px 18px 24px 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ventaja-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  display: block;
+}
+.ventajas-description {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.ventajas-description-content {
+    flex: 1;
+    text-align: left;
+}
+
+.ventajas-description-content .section-title {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.ventajas-description-content .section-title::after {
+    margin: 15px 0 0 0;
+}
+
+.ventajas-description-content p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.ventajas-description-image {
+    flex: 0 0 400px;
+    max-width: 400px;
+}
+
+.ventajas-description-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    
+}
+
+/* Responsive para la sección Acerca de Nosotros */
+@media (max-width: 992px) {
+    .ventajas-description {
+        flex-direction: column;
+    }
+    
+    .ventajas-description-content {
+        text-align: center;
+    }
+    
+    .ventajas-description-content .section-title {
+        text-align: center;
+    }
+    
+    .ventajas-description-content .section-title::after {
+        margin: 15px auto 0;
+    }
+    
+    .ventajas-description-content p {
+        text-align: justify;
+    }
+    
+    .ventajas-description-image {
+        flex: 0 0 auto;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .ventajas-description {
+        padding: 30px 20px;
+    }
+    
+    .ventajas-description-image {
+        max-width: 300px;
+    }
+}
+.ventajas-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.ventajas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ventajas-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.ventaja-item {
+    background-color:#f5f5f5;
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.ventaja-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.ventaja-item h3 {
+    color: #2D4356;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.ventaja-item p {
+    color: #666;
+    font-size: 14px;
+}
+
+.ventajas-description {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.ventajas-description p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Nuestras Habilidades */
+
+.habilidades-section {
+    padding: 80px 20px;
+    background-color: white;
+}
+.title-highlight {
+    color: var(--beneficiate-green);
+}
+.habilidades-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.habilidades-subtitle {
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+}
+
+.habilidades-charts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.chart-container {
+    text-align: center;
+}
+
+.chart {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.chart::before {
+    content: '';
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.chart-percentage {
+    position: relative;
+    z-index: 1;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2D4356;
+}
+
+.chart-yellow {
+    background: conic-gradient(#FFC107 0% 75%, #f1f1f1 75% 100%);
+}
+
+.chart-red {
+    background: conic-gradient(#F44336 0% 85%, #f1f1f1 85% 100%);
+}
+
+.chart-green {
+    background: conic-gradient(#A4D070 0% 90%, #f1f1f1 90% 100%);
+}
+
+.chart-blue {
+    background: conic-gradient(#2196F3 0% 95%, #f1f1f1 95% 100%);
+}
+
+.chart-container h3 {
+    color: #2D4356;
+    font-size: 18px;
+}
+.chart-yellow + h3 {
+    color: #FFC107;
+}
+
+.chart-red + h3 {
+    color: #F44336;
+}
+
+.chart-green + h3 {
+    color: #A4D070;
+}
+
+.chart-blue + h3 {
+    color: #2196F3;
+}
+
+/* Nuestros Servicios */
+.servicios-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.servicios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.servicios-subtitle {
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+}
+.servicios-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.servicio-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px 20px 30px; /* Aumentado padding superior para el ícono */
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    position: relative; /* Importante para posicionar el ícono */
+    margin-top: 40px; /* Espacio para el ícono que sobresale */
+}
+
+.servicio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.servicio-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #2D4356;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute; /* Posicionamiento absoluto */
+    top: -40px; /* Mitad del ícono fuera del contenedor */
+    left: 50%;
+    transform: translateX(-50%); /* Centrar horizontalmente */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.servicio-icon i {
+    color: white;
+    font-size: 35px;
+}
+
+/* Si usas imágenes en lugar de íconos */
+.servicio-icon img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.servicio-item h3 {
+    color: #717171;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px; /* Espacio adicional después del ícono */
+}
+
+.servicio-item p {
+    color: var(--beneficiate-green);
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .servicio-item {
+        width: calc(50% - 20px);
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .servicio-item {
+        width: 100%;
+    }
+}
+/* Testimonios */
+.testimonios-section {
+    padding: 80px 20px;
+    background-color: white;
+}
+
+.testimonios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonios-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.testimonio-card {
+    background-color: white;
+    border-radius: 10px;
+    outline: 2px solid var(--beneficiate-green);
+    overflow: hidden;
+    width: 350px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.testimonio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.testimonio-video {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+}
+
+.testimonio-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(164, 208, 112, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.play-button i {
+    color: white;
+    font-size: 24px;
+}
+
+.testimonio-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.testimonio-content h3 {
+    color: #2D4356;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.testimonio-content p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.testimonio-link {
+    color: #A4D070;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.testimonio-link:hover {
+    text-decoration: underline;
+}
+.testimonio-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    border-radius: 0;
+    display: block;
+}
+/* Contacto */
+.contacto-section {
+    padding: 60px 20px;
+    background-color: #FFf;
+}
+
+.contacto-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contacto-title {
+    color: #2D4356;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.contacto-form-container {
+    background-color:#e8d641;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contacto-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.contacto-form input {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contacto-submit {
+    background-color: #07760a;
+    color: #e8d641;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contacto-submit:hover {
+    background-color: #8BC34A;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #4fa804;
+    color: white;
+    padding: 60px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.footer-logo img {
+  height: 70px; 
+  width: auto;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.footer-logo span {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Línea divisoria entre columnas */
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 30px;
+  padding: 0 30px;
+  position: relative;
+}
+
+/* Agrega líneas verticales entre las columnas */
+.footer-column:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(255,255,255,0.3);
+}
+
+/* Asegura que las líneas no se vean en dispositivos pequeños */
+@media (max-width: 768px) {
+  .footer-column:not(:last-child)::after {
+    display: none;
+  }
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #2D4356;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #2D4356;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact li i {
+    margin-right: 10px;
+    color: #2D4356;
+}
+
+.footer-social {
+    display: flex;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.footer-social a i {
+    color: #4fa804;
+    font-size: 18px;
+}
+
+.footer-social a:hover {
+    background-color: #2D4356;
+}
+
+.footer-social a:hover i {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .social-icons {
+        margin-bottom: 10px;
+    }
+    
+    .main-nav {
+        padding: 10px;
+    }
+    
+    .logo img {
+        height: 30px;
+    }
+    
+    .logo span {
+        font-size: 22px;
+    }
+    
+    .menu {
+        display: none;
+    }
+    
+    .planes-title {
+        font-size: 32px;
+    }
+    
+    .plan-info {
+        flex-direction: column;
+    }
+    
+    .plan-check-icon {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+    
+    .plan-image {
+        margin-top: 30px;
+    }
+    
+    .whatsapp-banner-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .whatsapp-banner-text {
+        margin-bottom: 20px;
+    }
+    
+    .ventajas-grid, .servicios-grid {
+        gap: 20px;
+    }
+    
+    .ventaja-item, .servicio-item {
+        width: calc(50% - 20px);
+    }
+    
+    .habilidades-charts {
+        gap: 20px;
+    }
+    
+    .chart {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .chart::before {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .chart-percentage {
+        font-size: 22px;
+    }
+    
+    .testimonio-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .contacto-form input {
+        width: 100%;
+    }
+    
+    .footer-column {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .ventaja-item, .servicio-item {
+        width: 100%;
+    }
+    
+    .chart {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .chart::before {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .chart-percentage {
+        font-size: 18px;
+    }
+}
+/* Nuestros Planes */
+.planes-section {
+    padding: 40px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.plan-subtitle {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.plan-description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.plan-features {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.plan-features li {
+    padding: 5px 0;
+    color: #555;
+    position: relative;
+    padding-left: 20px;
+}
+
+.plan-features li:before {
+    content: "•";
+    color: #A4D070;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.plan-price {
+    color: #4fa804;
+    font-size: 42px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.plan-image {
+    margin-left: 30px;
+    position: relative;
+}
+
+.plan-image img {
+    border-radius: 10px;
+    max-width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.plan-cta {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    border: 2px solid #4fa804;
+    color: #4fa804;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+}
+
+.plan-cta i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Responsive design for plans section */
+@media (max-width: 768px) {
+    .plan-info {
+        flex-direction: column;
+    }
+    
+    .plan-image {
+        margin-left: 0;
+        margin-top: 30px;
+        text-align: center;
+    }
+    
+    .plan-image img {
+        max-width: 100%;
+    }
+    
+    .plan-cta {
+        position: static;
+        transform: none;
+        margin-top: 20px;
+        display: inline-flex;
+    }
+    
+    .planes-title {
+        font-size: 32px;
+    }
+    
+    .plan-text h3 {
+        font-size: 24px;
+    }
+    
+    .plan-price {
+        font-size: 36px;
+    }
+}
+
+.menu a.active {
+    color: #8BC34A;
+}
+
+.menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FFCA28;
+}
+
+/* Sección Hero */
+.hero {
+    position: relative;
+    background-color: #8BC34A;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.wave-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/wave-pattern.svg');
+    background-size: cover;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero h2 {
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ffbd1a;
+    color: #273e5b;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    z-index: 2;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .social-icons {
+        margin-bottom: 10px;
+    }
+    
+    .main-nav {
+        flex-direction: column;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .menu li {
+        margin: 5px 10px;
+    }
+    
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero h2 {
+        font-size: 22px;
+    }
+}
+/* Animación para el cambio de planes */
+.plan-details {
+    transition: opacity 0.3s ease;
+}
+
+.plan-tab {
+    transition: all 0.3s ease;
+}
+
+.plan-tab:hover:not(.active) {
+    background-color: #e0e0e0;
+}
